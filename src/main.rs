@@ -80,6 +80,9 @@ fn get_format_pieces(tmpl: &str) -> Result<funcfmt::FormatPieces<types::Track>> 
         "artist" => |t: &types::Track| Some(clean_part(
             t.tag.artist().unwrap_or("Unknown Artist")
         )),
+        "album-artist" => |t: &types::Track| Some(clean_part(
+            t.tag.album_artist().unwrap_or(t.tag.artist().unwrap_or("Unknown Artist"))
+        )),
         "album" => |t: &types::Track| Some(clean_part(
             t.tag.album_title().unwrap_or("Unknown Album")
         )),

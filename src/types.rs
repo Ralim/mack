@@ -48,6 +48,7 @@ pub struct Config {
     /// TAG:
     ///
     ///   artist
+    ///   album-artist
     ///   album
     ///   track  (width: 2)
     ///   title
